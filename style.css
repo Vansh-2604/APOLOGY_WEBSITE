@@ -1,0 +1,242 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    text-align:center;
+    overflow-x:hidden;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:3rem;
+    color:white;
+}
+
+.hero p{
+    color:white;
+    margin:20px;
+    font-size:1.2rem;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+.card{
+    background:white;
+    width:70%;
+    margin:50px auto;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+
+@keyframes heartbeat{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+
+
+
+.hearts::before{
+    content:"❤️ ❤️ ❤️ ❤️ ❤️";
+    position:fixed;
+    width:100%;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    from{
+        top:100%;
+    }
+    to{
+        top:-20%;
+    }
+}
+.love-reasons{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.love-reasons h2{
+    color:white;
+    margin-bottom:40px;
+    font-size:2rem;
+}
+
+.reasons-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.reason-card{
+    background:white;
+    width:250px;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.reason-card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+.reason-card span{
+    font-size:40px;
+    display:block;
+    margin-bottom:10px;
+}
+
+.reason-card p{
+    color:#555;
+    font-size:16px;
+}
+
+
+/* Thank You Message */
+
+#thankYouMsg{
+    display:none;
+    margin-top:25px;
+    font-size:24px;
+    color:white;
+    font-weight:bold;
+    animation:fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Floating Hearts Animation */
+
+.floating-heart{
+    position:fixed;
+    font-size:30px;
+    pointer-events:none;
+    z-index:9999;
+    animation:floatUp 4s linear forwards;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-700px) scale(2);
+        opacity:0;
+    }
+}
+
+/* Button Glow Effect After Click */
+
+.glow{
+    animation:glowEffect 1.5s infinite;
+}
+
+@keyframes glowEffect{
+    0%{
+        box-shadow:0 0 5px #fff;
+    }
+
+    50%{
+        box-shadow:0 0 25px #ff4d6d;
+    }
+
+    100%{
+        box-shadow:0 0 5px #fff;
+    }
+}
+html{
+    scroll-behavior:smooth;
+}
+
+#thankYouMsg{
+    display:none;
+    margin-top:30px;
+}
+
+.thank-box{
+    background:white;
+    width:350px;
+    margin:0 auto;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+
+    transform:translateY(-500px);
+    opacity:0;
+}
+
+.drop-animation{
+    animation:dropBox 1.5s ease forwards;
+}
+
+@keyframes dropBox{
+
+    0%{
+        transform:translateY(-500px);
+        opacity:0;
+    }
+
+    60%{
+        transform:translateY(30px);
+        opacity:1;
+    }
+
+    80%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+.thank-box h3{
+    color:#ff4d6d;
+    margin-bottom:10px;
+}
+
+.thank-box p{
+    color:#555;
+    line-height:1.6;
+}
